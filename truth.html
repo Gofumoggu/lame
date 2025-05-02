@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Truth Table Generator for logical expressions">
+    <title>Truth Table Generator</title>
+    <link rel="stylesheet" href="truth.css">
+    <!-- Add Material Icons for better UI -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Truth Table Generator</h1>
+            <p class="description">Generate truth tables for logical expressions with multiple variables</p>
+        </header>
+
+        <section class="controls">
+            <div class="input-group">
+                <label for="numVars">Number of Variables:</label>
+                <select id="numVars" onchange="generateTable()">
+                    <option value="2">2 Variables</option>
+                    <option value="3">3 Variables</option>
+                    <option value="4">4 Variables</option>
+                    <option value="5">5 Variables</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="expression">Logical Expression:</label>
+                <input type="text" id="expression" placeholder="e.g., A AND B" />
+                <div class="helper-text">Use operators: AND, OR, NOT, XOR</div>
+            </div>
+
+            <div class="button-group">
+                <button onclick="generateTable()" class="primary-btn">
+                    <span class="material-icons">table_chart</span>
+                    Generate Table
+                </button>
+                <button onclick="clearTable()" class="secondary-btn">
+                    <span class="material-icons">clear</span>
+                    Clear
+                </button>
+            </div>
+        </section>
+
+        <section class="output">
+            <div id="tableContainer" class="table-responsive"></div>
+        </section>
+
+        <footer class="help-section">
+            <details>
+                <summary>How to Use</summary>
+                <div class="help-content">
+                    <ol>
+                        <li>Select the number of variables you want in your truth table</li>
+                        <li>Optionally enter a logical expression using the variables (A, B, C, etc.)</li>
+                        <li>Click "Generate Table" to create your truth table</li>
+                        <li>Use "Clear" to reset the table and start over</li>
+                    </ol>
+                </div>
+            </details>
+        </footer>
+    </main>
+
+    <script src="truth.js"></script>
+</body>
+</html>
